@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Phone%20Myint%20Naing/Documents/AIT/classes/Machine%20Learning/a3-predicting-car-price-FrancisPhone/mlruns/0/377aaa9c51b6467ba68aa28cb6ac111d/artifacts
+end_time: 1727621538185
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 377aaa9c51b6467ba68aa28cb6ac111d
+run_name: reg-Ridge-method-minibatch
+run_uuid: 377aaa9c51b6467ba68aa28cb6ac111d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1727621531686
+status: 3
+tags: []
+user_id: Phone Myint Naing
