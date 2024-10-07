@@ -4,13 +4,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-tracking_uri = os.getenv('MLFLOW_TRACKING_URI')
+tracking_uri = "https://mlflow.ml.brain.cs.ait.ac.th/"
 mlflow.set_tracking_uri(tracking_uri)
-os.environ['MLFLOW_TRACKING_USERNAME'] = os.getenv('MLFLOW_TRACKING_USERNAME')
-os.environ['MLFLOW_TRACKING_PASSWORD'] = os.getenv('MLFLOW_TRACKING_PASSWORD')
-os.environ["LOGNAME"] = os.getenv('LOGNAME')
-stage = os.getenv('stage')
-model_name = os.getenv('APP_MODEL_NAME')
+os.environ['MLFLOW_TRACKING_USERNAME'] = 'admin'
+os.environ['MLFLOW_TRACKING_PASSWORD'] = 'password'
+os.environ["LOGNAME"] = "st124973"
+stage = 'Staging'
+model_name = 'st124973-a3-model'
 
 client = mlflow.tracking.MlflowClient()
 client.transition_model_version_stage(name=model_name, version=1, stage=stage)
