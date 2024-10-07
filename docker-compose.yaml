@@ -1,32 +1,11 @@
 version: '3.10'
 
 services:
-  python:
-    # The image I upload to my docker hub
-    image: francisphone/car-price-prediction
-    # For MAC M1 user
-    platform: linux/x86_64
-
-    # This is important for asking Traefik to use your container.
-    labels:
-      # Allow Traefik to talk with your service
-      - traefik.enable=true
-      # Tell Traefik to use port 8501
-      - traefik.http.services.streamlit-st124973.loadbalancer.server.port=8501
-      # This config you domain name. By default, your subdomain is <service_name>-<folder_name>
-      # If you which to change the subdomain name, you uncomment the below configuration
-      # - traefik.http.routers.<service_name>-<folder_name>.rule=Host(`<subdomain>.ml2023.cs.ait.ac.th`)
-      # Below is for enable SSL.
-      - traefik.http.routers.streamlit-st124973.tls=true
-      - traefik.http.routers.streamlit-st124973.tls.certresolver=production
-      - traefik.http.routers.streamlit-st124973.entrypoints=websecure
-    # This define network. You would need to keep it like this.
-    networks:
-      - default
-      - traefik_default
-
-# Keep it like this too.
-networks:
-  default:
-  traefik_default:
-    external: true
+    app:
+        build: ./
+        command: streamlit run app.py --server.port 8501
+        volumes:
+            - ./:/usr/src/app
+        ports:
+            - 8501:8501
+        image: francisphone/car-price-range-prediction:latest
