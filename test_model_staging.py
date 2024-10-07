@@ -19,7 +19,7 @@ client.transition_model_version_stage(name=model_name, version=1, stage=stage)
 
 def test_load_model():
     model = mlflow.sklearn.load_model(model_uri=f"models:/{model_name}/{stage}")
-    with open('scaler.pickle', 'rb') as handle:
+    with open('lgr_scaler.pickle', 'rb') as handle:
         scaler = pickle.load(handle)
     return model, scaler
 
