@@ -82,4 +82,4 @@ jobs:
           proxy_key: ${{ secrets.KEY }}
           script: |
             tag=${{ github.ref_name }} docker compose -f st124973/docker-compose.yaml down
-            tag=${{ github.ref_name }} docker compose -f st124973/docker-compose.yaml up -d    
+            tag=${{ github.ref_name }} docker compose -f st124973/docker-compose.yaml up -d
